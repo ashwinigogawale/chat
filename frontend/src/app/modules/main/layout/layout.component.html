@@ -1,0 +1,50 @@
+<clr-main-container>
+  <clr-header class="header-5" style="height: 10px;">
+
+
+    <form class="search" style="margin-left: 70px;">
+      <label for="search_input" style="margin-left: 40px;">
+        <input id="search_input" type="text" placeholder="Search for keywords...">
+      </label>
+    </form>
+    <div class="header-actions">
+      <clr-dropdown>
+        <button class="nav-text" clrDropdownTrigger>
+          <clr-icon shape="user"></clr-icon>
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+          <a href="javascript://" clrDropdownItem routerLink="/main/about">About</a>
+
+          <a href="javascript://" clrDropdownItem (click)="onLogout()">Log out</a>
+        </clr-dropdown-menu>
+      </clr-dropdown>
+    </div>
+  </clr-header>
+
+
+
+
+  <div class="content-container">
+    <main class="content-area">
+      <router-outlet></router-outlet>
+    </main>
+
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed" [clr-nav-level]="2">
+      <clr-vertical-nav-group routerLinkActive="active">
+        <clr-icon shape="user" clrVerticalNavIcon></clr-icon>
+        Users
+        <clr-vertical-nav-group-children>
+
+
+        </clr-vertical-nav-group-children>
+      </clr-vertical-nav-group>
+
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./board">
+
+        ashwini
+      </a>
+    </clr-vertical-nav>
+  </div>
+
+</clr-main-container>
